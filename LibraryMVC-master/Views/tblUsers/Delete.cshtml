@@ -1,0 +1,72 @@
+﻿@model LibraryMSMVC.Models.tblUser
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tblUser</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserGender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserGender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserDep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserDep)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserAdmNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserAdmNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserPass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserPass)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
