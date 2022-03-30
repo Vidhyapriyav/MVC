@@ -78,17 +78,8 @@ namespace LibraryMSMVC.Controllers
             var transactionList = adminTransactiondb.tblTransactions.Where(r => r.TranStatus == "Accepted").ToList();
             return Json(new { data = transactionList }, JsonRequestBehavior.AllowGet);
         }
-        // Returns admin return view, here admin can accept book return requests.
-        public ActionResult Return()
-        {
-            return View(adminTransactiondb.tblTransactions.ToList());
-        }
-        // Returns all return books in json format.
-        public ActionResult GetAllReturn()
-        {
-            var transactionList = adminTransactiondb.tblTransactions.Where(r => r.TranStatus == "Returned").ToList();
-            return Json(new { data = transactionList }, JsonRequestBehavior.AllowGet);
-        }
+       
+      
         // Accepts the book return request.
         public ActionResult AcceptReturn(int? tranId)
         {
